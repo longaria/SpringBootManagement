@@ -1,0 +1,8 @@
+Projekt erstellt mit Spring.initializr.io mit Dependencies:
+Spring Web, Spring Data JPA, PostgreSQL Driver
+
+Verwendete Datenbank:
+PostgreSQL Version 13.3
+
+Verwendeter REST-Client:
+Postman

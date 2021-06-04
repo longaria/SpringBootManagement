@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "e08834ad-0a7d-4680-8c44-20dd5d16e0d5",
+		"name": "MyCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person einfügen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var date = new Date(1995,11,8);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"schmidtke\",\r\n    \"vorname\": \"nikoPOST\",\r\n    \"geschlecht\": \"MÄNNLICH\",\r\n    \"geburtsdatum\": \"2004-12-08\",\r\n    \"beruf\": {\r\n        \"berufsbezeichnung\": \"Softwareentwickler\",\r\n        \"position\": \"SENIOR\",\r\n        \"angestelltSeit\": \"2020-03-01\",\r\n        \"angestelltBis\": null\r\n    },\r\n    \"emailBeruf\": \"niko@schmidt.de\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mitarbeiter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mitarbeiter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllePersonen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mitarbeiter/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mitarbeiter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lösche Person mit ID 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mitarbeiter/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mitarbeiter",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Name",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mitarbeiter/1?name=Meier&vorname=Hans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mitarbeiter",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Meier"
+						},
+						{
+							"key": "vorname",
+							"value": "Hans"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
